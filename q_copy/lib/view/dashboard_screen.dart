@@ -142,25 +142,14 @@ class RankHolders extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         kHeight15,
-                        Row(
-                          children: [
-                            Container(
-                              margin: const EdgeInsets.only(left: 5),
-                              child: const Icon(
-                                Icons.arrow_drop_up,
-                                color: Colors.green,
-                              ),
-                            ),
-                            const SizedBox(width: 5),
-                            Flexible(
-                              child: Text(
-                                datas[1].name.toString(),
-                                style: latoBold,
-                                overflow: TextOverflow.ellipsis,
-                                maxLines: 1,
-                              ),
-                            ),
-                          ],
+                        const SizedBox(width: 5),
+                        Flexible(
+                          child: Text(
+                            datas[1].name.toString(),
+                            style: latoBold,
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
+                          ),
                         ),
                         Row(
                           children: [
