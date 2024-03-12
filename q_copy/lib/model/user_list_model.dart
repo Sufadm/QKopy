@@ -21,25 +21,25 @@ class Leader {
   }
 }
 
-class LeaderModel {
-  final String? region;
-  final List<Leader>? leaders;
+// class LeaderModel {
+//   final String? region;
+//   final List<Leader>? leaders;
 
-  LeaderModel({
-    required this.region,
-    required this.leaders,
-  });
+//   LeaderModel({
+//     required this.region,
+//     required this.leaders,
+//   });
 
-  factory LeaderModel.fromJson(Map<String, dynamic> json) {
-    List<dynamic>? leadersJson = json['leaders'] as List<dynamic>?;
-    List<Leader> leaders = [];
-    if (leadersJson != null) {
-      leaders =
-          leadersJson.map((leaderJson) => Leader.fromJson(leaderJson)).toList();
-    }
-    return LeaderModel(
-      region: json['region'],
-      leaders: leaders,
-    );
-  }
-}
+//   factory LeaderModel.fromJson(Map<String, dynamic> json) {
+//     List<dynamic>? leadersJson = json['leaders'] as List<dynamic>?;
+//     List<Leader> leaders = [];
+//     if (leadersJson != null) {
+//       leaders =
+//           leadersJson.map((leaderJson) => Leader.fromJson(leaderJson)).toList();
+//     }
+//     return LeaderModel(
+//       region: json['region'],
+//       leaders: leaders,
+//     );
+//   }
+// }

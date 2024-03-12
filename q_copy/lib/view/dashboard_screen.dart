@@ -152,15 +152,33 @@ class RankHolders extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(width: 5),
-                            Text(
-                              datas[1].name.toString(),
-                              style: latoBold,
+                            Flexible(
+                              child: Text(
+                                datas[1].name.toString(),
+                                style: latoBold,
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 1,
+                              ),
                             ),
                           ],
                         ),
-                        Text(
-                          datas[1].points.toString(),
-                          style: latoB,
+                        Row(
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(left: 15),
+                              child: const Icon(
+                                Icons.arrow_drop_up,
+                                color: Colors.green,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              datas[1].points.toString(),
+                              style: latoB,
+                            ),
+                          ],
                         ),
                       ],
                     )),
@@ -195,9 +213,37 @@ class RankHolders extends StatelessWidget {
                     margin: const EdgeInsets.only(top: 50),
                     height: 170,
                     child: Center(
-                      child: Text(
-                        datas[0].points.toString(),
-                        style: latoB,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const SizedBox(width: 5),
+                          Flexible(
+                            child: Text(
+                              datas[0].name.toString(),
+                              style: latoBold,
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.only(left: 20),
+                                child: const Icon(
+                                  Icons.arrow_drop_up,
+                                  color: Colors.green,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                datas[0].points.toString(),
+                                style: latoB,
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -231,9 +277,40 @@ class RankHolders extends StatelessWidget {
                     margin: const EdgeInsets.only(top: 130),
                     height: 90,
                     child: Center(
-                        child: Text(
-                      datas[2].points.toString(),
-                      style: latoB,
+                        child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        kHeight25,
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        Flexible(
+                          child: Text(
+                            datas[2].name.toString(),
+                            style: latoBold,
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(left: 15),
+                              child: const Icon(
+                                Icons.arrow_drop_up,
+                                color: Colors.green,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              datas[2].points.toString(),
+                              style: latoB,
+                            ),
+                          ],
+                        ),
+                      ],
                     )),
                   ),
                   Container(
