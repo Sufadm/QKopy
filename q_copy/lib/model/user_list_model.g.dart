@@ -1,35 +1,35 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'local_store_model.dart';
+part of 'user_list_model.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class DataModelAdapter extends TypeAdapter<DataModel> {
+class LeaderAdapter extends TypeAdapter<Leader> {
   @override
-  final int typeId = 1;
+  final int typeId = 0;
 
   @override
-  DataModel read(BinaryReader reader) {
+  Leader read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return DataModel(
-      name: fields[1] as String,
-      profilePic: fields[2] as String,
-      points: fields[3] as String,
-      id: fields[0] as int?,
+    return Leader(
+      userId: fields[0] as String?,
+      name: fields[1] as String?,
+      profilePic: fields[2] as String?,
+      points: fields[3] as int?,
     );
   }
 
   @override
-  void write(BinaryWriter writer, DataModel obj) {
+  void write(BinaryWriter writer, Leader obj) {
     writer
       ..writeByte(4)
       ..writeByte(0)
-      ..write(obj.id)
+      ..write(obj.userId)
       ..writeByte(1)
       ..write(obj.name)
       ..writeByte(2)
@@ -44,7 +44,7 @@ class DataModelAdapter extends TypeAdapter<DataModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is DataModelAdapter &&
+      other is LeaderAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
