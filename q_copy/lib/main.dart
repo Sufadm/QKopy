@@ -1,3 +1,4 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:path_provider/path_provider.dart';
@@ -10,13 +11,11 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final appDocumentDirectory = await getApplicationDocumentsDirectory();
   Hive.init(appDocumentDirectory.path);
-  await Hive.openBox<Leader>('leaderBox');
 
   Hive.initFlutter();
   if (!Hive.isAdapterRegistered(LeaderAdapter().typeId)) {
     Hive.registerAdapter(LeaderAdapter());
   }
-  UserListApi().fetchData();
   runApp(const MyApp());
 }
 
@@ -25,16 +24,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => UserListApi(),
-      child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-            useMaterial3: true,
-          ),
-          home: const DashboardScreen()),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => UserListApi()),
+        StreamProvider<ConnectivityResult>(
+          create: (_) => Connectivity().onConnectivityChanged,
+          initialData:
+              ConnectivityResult.none, // Provide initial non-null value
+        ),
+      ],
+      child: const MaterialApp(
+        title: 'Your App',
+        home: DashboardScreen(),
+      ),
     );
   }
 }

@@ -1,7 +1,9 @@
+import 'dart:typed_data';
+
 import 'package:hive/hive.dart';
 part 'user_list_model.g.dart';
 
-@HiveType(typeId: 0)
+@HiveType(typeId: 1)
 class Leader extends HiveObject {
   @HiveField(0)
   final String? userId;
@@ -14,8 +16,11 @@ class Leader extends HiveObject {
 
   @HiveField(3)
   final int? points;
+  @HiveField(4)
+  Uint8List? imageBytes;
 
   Leader({
+    this.imageBytes,
     required this.userId,
     required this.name,
     required this.profilePic,

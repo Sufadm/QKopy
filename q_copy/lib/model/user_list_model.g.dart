@@ -8,7 +8,7 @@ part of 'user_list_model.dart';
 
 class LeaderAdapter extends TypeAdapter<Leader> {
   @override
-  final int typeId = 0;
+  final int typeId = 1;
 
   @override
   Leader read(BinaryReader reader) {
@@ -17,6 +17,7 @@ class LeaderAdapter extends TypeAdapter<Leader> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Leader(
+      imageBytes: fields[4] as Uint8List?,
       userId: fields[0] as String?,
       name: fields[1] as String?,
       profilePic: fields[2] as String?,
@@ -27,7 +28,7 @@ class LeaderAdapter extends TypeAdapter<Leader> {
   @override
   void write(BinaryWriter writer, Leader obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(5)
       ..writeByte(0)
       ..write(obj.userId)
       ..writeByte(1)
@@ -35,7 +36,9 @@ class LeaderAdapter extends TypeAdapter<Leader> {
       ..writeByte(2)
       ..write(obj.profilePic)
       ..writeByte(3)
-      ..write(obj.points);
+      ..write(obj.points)
+      ..writeByte(4)
+      ..write(obj.imageBytes);
   }
 
   @override
