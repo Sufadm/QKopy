@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:q_copy/controller/users_data.dart';
-import 'package:q_copy/model/styles/const/google_fonts.dart';
-import 'package:q_copy/model/styles/const/sizedbox.dart';
+import 'package:q_copy/styles/google_fonts.dart';
+import 'package:q_copy/styles/sizedbox.dart';
 import 'package:q_copy/model/user_list_model.dart';
 
 class DashboardScreen extends StatelessWidget {
