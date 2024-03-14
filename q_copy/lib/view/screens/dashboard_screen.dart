@@ -70,18 +70,21 @@ class _DashboardScreenState extends State<DashboardScreen> {
             // rank Holders-----------------
             const RankHolders(),
             kHeight15,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Username",
-                  style: latoW,
-                ),
-                Text(
-                  "Points",
-                  style: latoW,
-                )
-              ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Username",
+                    style: latoW,
+                  ),
+                  Text(
+                    "Points",
+                    style: latoW,
+                  )
+                ],
+              ),
             ),
             Consumer<UserListApi>(
               builder: (context, dataProvider, child) {

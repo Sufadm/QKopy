@@ -10,7 +10,7 @@ class UserListApi extends ChangeNotifier {
   static const url =
       "https://e811e307-bc1a-4f80-8e1f-af2d64f41348.mock.pstmn.io/leaderboard";
 
-  late final Box<Leader> _hiveBox; // Declare _hiveBox as late
+  late final Box<Leader> _hiveBox;
 
   UserListApi() {
     _initHive();
