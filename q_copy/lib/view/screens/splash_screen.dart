@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:q_copy/view/screens/dashboard_screen.dart';
+import 'package:q_copy/view/nav_bar.dart/navigation_bar.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
     await Future.delayed(const Duration(seconds: 5));
 
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-      return const DashboardScreen();
+      return const BottomNav();
     }));
   }
 

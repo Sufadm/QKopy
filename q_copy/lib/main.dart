@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         theme: ThemeData(scaffoldBackgroundColor: Colors.black),
         title: 'Your App',
-        home: const BottomNav(),
+        home: const SplashScreen(),
       ),
     );
   }

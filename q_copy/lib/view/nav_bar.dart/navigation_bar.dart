@@ -19,7 +19,6 @@ class BottomNav extends StatelessWidget {
               backgroundColor: Colors.black,
               selectedItemColor: Colors.white,
               unselectedItemColor: Colors.grey,
-              //  selectedItemColor: kLightBlueColor,
               type: BottomNavigationBarType.values.first,
               items: const [
                 BottomNavigationBarItem(
