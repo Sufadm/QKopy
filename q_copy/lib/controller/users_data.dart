@@ -8,7 +8,7 @@ import 'package:q_copy/model/user_list_model.dart';
 class UserListApi extends ChangeNotifier {
   List<Leader> datas = [];
   static const url =
-      "https://e811e307-bc1a-4f80-8e1f-af2d64f41348.mock.pstmn.io/leaderboard";
+      "https://run.mocky.io/v3/078310bd-5004-4d1e-af40-65917daa6eeb";
 
   late final Box<Leader> _hiveBox;
 

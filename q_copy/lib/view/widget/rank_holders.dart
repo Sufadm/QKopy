@@ -4,6 +4,7 @@ import 'package:q_copy/controller/users_data.dart';
 import 'package:q_copy/model/user_list_model.dart';
 import 'package:q_copy/styles/google_fonts.dart';
 import 'package:q_copy/styles/sizedbox.dart';
+import 'package:shimmer/shimmer.dart';
 
 class RankHolders extends StatelessWidget {
   const RankHolders({Key? key}) : super(key: key);
@@ -79,12 +80,29 @@ class RankHolders extends StatelessWidget {
                       ),
                       margin: EdgeInsets.only(top: screenHeight * 0.05),
                       child: Center(
-                        child: CircleAvatar(
-                          backgroundImage:
-                              NetworkImage(datas[1].profilePic.toString()),
-                          radius: screenWidth * 0.1,
-                        ),
-                      ),
+                          child: CircleAvatar(
+                        radius: screenWidth * 0.1,
+                        child: datas[1].profilePic ==
+                                null // Check if profilePic is null
+                            ? SizedBox(
+                                width: screenWidth *
+                                    0.1 *
+                                    2, // Adjust size if needed
+                                height: screenWidth * 0.1 * 2,
+                                child: Shimmer.fromColors(
+                                  baseColor: Colors.grey[300]!,
+                                  highlightColor: Colors.grey[100]!,
+                                  child: Container(
+                                    color: Colors.white, // Placeholder color
+                                  ),
+                                ),
+                              )
+                            : CircleAvatar(
+                                backgroundImage: NetworkImage(
+                                    datas[1].profilePic.toString()),
+                                radius: screenWidth * 0.1,
+                              ),
+                      )),
                     )
                   ],
                 ),

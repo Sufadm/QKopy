@@ -1,4 +1,3 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -8,22 +7,12 @@ import 'package:q_copy/styles/sizedbox.dart';
 import 'package:q_copy/model/user_list_model.dart';
 import 'package:q_copy/view/widget/rank_holders.dart';
 
-class DashboardScreen extends StatefulWidget {
+class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
   @override
-  State<DashboardScreen> createState() => _DashboardScreenState();
-}
-
-class _DashboardScreenState extends State<DashboardScreen> {
-  @override
-  void initState() {
-    Provider.of<UserListApi>(context, listen: false).fetchData();
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    Provider.of<UserListApi>(context, listen: false).fetchData();
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
