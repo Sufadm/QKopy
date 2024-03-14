@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:q_copy/controller/bottom_prov.dart';
 import 'package:q_copy/controller/users_data.dart';
 import 'package:q_copy/model/user_list_model.dart';
-import 'package:q_copy/view/dashboard_screen.dart';
+import 'package:q_copy/view/screens/dashboard_screen.dart';
+import 'package:q_copy/view/nav_bar.dart/navigation_bar.dart';
+import 'package:q_copy/view/screens/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,9 +36,10 @@ class MyApp extends StatelessWidget {
               ConnectivityResult.none, // Provide initial non-null value
         ),
       ],
-      child: const MaterialApp(
+      child: MaterialApp(
+        theme: ThemeData(scaffoldBackgroundColor: Colors.black),
         title: 'Your App',
-        home: DashboardScreen(),
+        home: const BottomNav(),
       ),
     );
   }
